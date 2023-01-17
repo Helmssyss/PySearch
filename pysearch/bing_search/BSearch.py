@@ -44,8 +44,7 @@ class BingSearch:
     @property
     def links(self) -> list[str]:
         threads:list[threading.Thread] = []
-        for i in range(1, (self.page * 10) + 1,11):
-            print("sa")
+        for i in range(1, 11 if self.page == 1 else (self.page * 10) + 1,11):
             t = threading.Thread(target=self.__searchQuery,args=(i,))
             t.start()
             threads.append(t)
