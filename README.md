@@ -5,9 +5,9 @@ from pysearch import GoogleSearch, BingSearch
 from pprint import pprint
 
 with GoogleSearch() as search:
-    search.query = "github"
+    search.query = "klavye"
     search.page = 2
-    pprint(search.links)
+    all_links = search.links
     
 # search = pysearch.BingSearch("mouse",3)
 # pprint(search.links)
