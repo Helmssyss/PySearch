@@ -38,7 +38,7 @@ class GoogleSearch:
     @property
     def links(self) -> list[str]:
         threads:list[threading.Thread] = []
-        for p in range(0,(self.page - 1) * 10,10):
+        for p in range(0, 10 if self.page == 1 else (self.page - 1) * 10,10):
             t = threading.Thread(target=self.__searchQuery,args=(p,))
             t.start()
             threads.append(t)
